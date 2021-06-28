@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+h1 {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 36px;
+    color: #F27830;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+}
+
+p {
+    font-size: 18px;
+    color: white;
+}
+
+a {
+    font-size: 18px;
+    color: white !important;
+    font-weight: bold;
+}
+
+.active {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+}
