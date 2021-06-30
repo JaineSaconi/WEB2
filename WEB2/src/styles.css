@@ -1,3 +1,8 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'prismjs/themes/prism-okaidia.css';
+@import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
+@import 'prismjs/plugins/line-highlight/prism-line-highlight.css';
+
 /* You can add global styles to this file, and also import other style files */
 h1 {
     font-size: 18px;
@@ -6,9 +11,8 @@ h1 {
 }
 
 h2 {
-    font-size: 36px;
-    color: #F27830;
-    font-weight: bold;
+    font-size: 18px;
+    color: white;
 }
 
 h3 {
@@ -33,4 +37,24 @@ a {
     color: white;
     font-weight: bold;
     text-decoration: underline;
+}
+
+.container {
+    width: 100%;
+    border-radius: 5px;
+    background-color:#F27830;
+    padding: 18px;
+}
+
+.main {
+    width: 100%;
+    padding: 30px;
+}
+
+.button {
+    padding: 15px;
+    font-size: 18px;
+    background-color: #F27830;
+    color: white;
+    border-radius: 5px;
 }

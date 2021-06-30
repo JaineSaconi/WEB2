@@ -9,6 +9,13 @@ import { ContentComponent } from './components/content/content.component';
 import { ProjectComponent } from './components/project/project.component';
 import { TeamComponent } from './components/team/team.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { MarkdownModule } from 'ngx-markdown';
+
+import 'prismjs';
+import 'prismjs/components/prism-typescript.min.js';
+import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
+import 'prismjs/plugins/line-highlight/prism-line-highlight.js';
+
 
 
 @NgModule({
@@ -19,11 +26,12 @@ import { ContactComponent } from './components/contact/contact.component';
     ContentComponent,
     ProjectComponent,
     TeamComponent,
-    ContactComponent
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MarkdownModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
