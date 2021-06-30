@@ -1,0 +1,11 @@
+.container {
+  margin-bottom: 20px;
+  overflow: auto;
+}
+
+.align-button {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}

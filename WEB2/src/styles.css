@@ -17,8 +17,15 @@ h2 {
 
 h3 {
     font-size: 24px;
-    color: white;
+    color: #F27830;
     font-weight: bold;
+    margin-bottom: 20px;
+}
+
+h4 {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 16px;
 }
 
 p {
@@ -29,7 +36,6 @@ p {
 a {
     font-size: 18px;
     color: white !important;
-    font-weight: bold;
 }
 
 .active {
@@ -44,6 +50,7 @@ a {
     border-radius: 5px;
     background-color:#F27830;
     padding: 18px;
+    line-break: auto;
 }
 
 .main {
@@ -57,4 +64,17 @@ a {
     background-color: #F27830;
     color: white;
     border-radius: 5px;
+    border:none
+}
+
+.legend {
+    font-size: 11px;
+    text-decoration: underline;
+    color: #F27830;
+    margin-left: 10px;
+}
+
+.leg {
+    width: 100%;
+    text-align: end;
 }
