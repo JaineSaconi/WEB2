@@ -1,80 +1,87 @@
-@import 'bootstrap/dist/css/bootstrap.min.css';
-@import 'prismjs/themes/prism-okaidia.css';
-@import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
-@import 'prismjs/plugins/line-highlight/prism-line-highlight.css';
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "prismjs/themes/prism-okaidia.css";
+@import "prismjs/plugins/line-numbers/prism-line-numbers.css";
+@import "prismjs/plugins/line-highlight/prism-line-highlight.css";
 
 /* You can add global styles to this file, and also import other style files */
 h1 {
-    font-size: 18px;
-    color: white;
-    font-weight: bold;
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
 }
 
 h2 {
-    font-size: 18px;
-    color: white;
+  font-size: 18px;
+  color: white;
 }
 
 h3 {
-    font-size: 24px;
-    color: #F27830;
-    font-weight: bold;
-    margin-bottom: 20px;
+  font-size: 24px;
+  color: #f27830;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 h4 {
-    font-size: 18px;
-    color: white;
-    margin-bottom: 16px;
+  font-size: 18px;
+  color: white;
+  margin-bottom: 16px;
 }
 
 p {
-    font-size: 18px;
-    color: white;
+  font-size: 18px;
+  color: white;
 }
 
 a {
-    font-size: 18px;
-    color: white !important;
+  font-size: 18px;
+  color: white !important;
 }
 
 .active {
-    font-size: 18px;
-    color: white;
-    font-weight: bold;
-    text-decoration: underline;
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .container {
-    width: 100%;
-    border-radius: 5px;
-    background-color:#F27830;
-    padding: 18px;
-    line-break: auto;
+  border-radius: 5px;
+  background-color: #f27830;
+  padding: 18px;
+  line-break: auto;
+  display: inline-block;
 }
 
 .main {
-    width: 100%;
-    padding: 30px;
+  width: 100%;
+  padding: 30px;
 }
 
 .button {
-    padding: 15px;
-    font-size: 18px;
-    background-color: #F27830;
-    color: white;
-    border-radius: 5px;
-    border:none
+  padding: 15px;
+  font-size: 18px;
+  background-color: #f27830;
+  color: white;
+  border-radius: 5px;
+  border: none;
 }
 
 .legend {
-    font-size: 11px;
-    text-decoration: underline;
-    color: #F27830;
-    margin-left: 10px;
+  font-size: 11px;
+  text-decoration: underline;
+  color: #f27830;
+  margin-left: 10px;
 }
 
 .leg {
-    width: 100%;
-    text-align: end;
+  width: 100%;
+  text-align: end;
+}
+
+.container-block {
+  width: fit-content;
+  border-radius: 5px;
+  background-color: #f27830;
+  padding: 15px;
 }
