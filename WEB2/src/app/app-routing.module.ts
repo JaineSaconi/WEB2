@@ -9,7 +9,7 @@ import { TeamComponent } from './components/team/team.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent 
   },
   {
     path: 'content',
