@@ -42,7 +42,6 @@ a {
   font-size: 18px;
   color: white;
   font-weight: bold;
-  text-decoration: underline;
 }
 
 .container {
@@ -65,6 +64,16 @@ a {
   color: white;
   border-radius: 5px;
   border: none;
+}
+
+.button-white {
+  padding: 5px 20px;
+  font-size: 18px;
+  background-color: white;
+  color: #f27830;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
 }
 
 .legend {
