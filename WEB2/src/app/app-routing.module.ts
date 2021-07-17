@@ -4,6 +4,7 @@ import { ClassesRegisterComponent } from './components/classes-register/classes-
 import { ClassesComponent } from './components/classes/classes.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ContentComponent } from './components/content/content.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProjectComponent } from './components/project/project.component';
 import { TeamComponent } from './components/team/team.component';
@@ -37,6 +38,11 @@ const routes: Routes = [
     path: 'classes-register',
     component: ClassesRegisterComponent
   },
+  {
+    path: 'forgot-password',
+    component: ForgotPasswordComponent
+  },
+
 ];
 
 @NgModule({
