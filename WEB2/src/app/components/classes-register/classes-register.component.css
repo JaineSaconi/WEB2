@@ -1,0 +1,15 @@
+.container-input {
+  margin-bottom: 30px;
+}
+
+.input-date {
+  border-radius: 5px;
+  background-color: #f2dbae;
+  border: 1px solid #f27830;
+  padding: 5px 10px;
+  width: 50%;
+}
+
+.btn {
+  margin-right: 10px;
+}

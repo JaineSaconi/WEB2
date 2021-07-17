@@ -16,6 +16,7 @@ import 'prismjs/components/prism-typescript.min.js';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
 import 'prismjs/plugins/line-highlight/prism-line-highlight.js';
 import { ClassesComponent } from './components/classes/classes.component';
+import { ClassesRegisterComponent } from './components/classes-register/classes-register.component';
 
 
 
@@ -29,6 +30,7 @@ import { ClassesComponent } from './components/classes/classes.component';
     TeamComponent,
     ContactComponent,
     ClassesComponent,
+    ClassesRegisterComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ClassesRegisterComponent } from './components/classes-register/classes-register.component';
 import { ClassesComponent } from './components/classes/classes.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ContentComponent } from './components/content/content.component';
@@ -10,7 +11,7 @@ import { TeamComponent } from './components/team/team.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent 
+    component: HomeComponent
   },
   {
     path: 'content',
@@ -31,7 +32,11 @@ const routes: Routes = [
   {
     path: 'classes',
     component: ClassesComponent
-  }
+  },
+  {
+    path: 'classes-register',
+    component: ClassesRegisterComponent
+  },
 ];
 
 @NgModule({

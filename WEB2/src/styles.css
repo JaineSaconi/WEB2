@@ -52,6 +52,10 @@ a {
   display: inline-block;
 }
 
+.main-register {
+  margin: 2% 30%;
+}
+
 .main {
   width: 100%;
   padding: 30px;
@@ -93,4 +97,18 @@ a {
   border-radius: 5px;
   background-color: #f27830;
   padding: 15px;
+}
+
+.input {
+  border-radius: 5px;
+  background-color: #f2dbae;
+  border: 1px solid #f27830;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+.container-button {
+  width: 100%;
+  justify-content: flex-end;
+  display: flex;
 }
