@@ -18,6 +18,7 @@ import 'prismjs/plugins/line-highlight/prism-line-highlight.js';
 import { ClassesComponent } from './components/classes/classes.component';
 import { ClassesRegisterComponent } from './components/classes-register/classes-register.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 
@@ -29,6 +30,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
     ContentComponent,
     ProjectComponent,
     TeamComponent,
+    LoginComponent,
     ContactComponent,
     ClassesComponent,
     ClassesRegisterComponent,

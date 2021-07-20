@@ -13,12 +13,20 @@
   flex-direction: column;
 }
 
-.input-email {
+.input-user {
   padding: 5px;
   font-size: 12px;
   border-color: #f27830;
   border-radius: 5px;
   margin-left: 25px;
+}
+
+.input-password {
+  padding: 5px;
+  font-size: 12px;
+  border-color: #f27830;
+  border-radius: 5px;
+  margin-left: 36px;
 }
 
 .imput-obs {

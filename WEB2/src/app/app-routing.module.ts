@@ -4,6 +4,7 @@ import { ClassesRegisterComponent } from './components/classes-register/classes-
 import { ClassesComponent } from './components/classes/classes.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ContentComponent } from './components/content/content.component';
+import { LoginComponent } from './components/login/login.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProjectComponent } from './components/project/project.component';
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'content',
     component: ContentComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
   },
   {
     path: 'project',
