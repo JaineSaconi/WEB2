@@ -20,6 +20,7 @@ import { ClassesComponent } from './components/classes/classes.component';
 import { ClassesRegisterComponent } from './components/classes-register/classes-register.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { RequestServiceService } from './services/request-service.service';
+import { LoginComponent } from './components/login/login.component';
 
 
 
@@ -31,6 +32,7 @@ import { RequestServiceService } from './services/request-service.service';
     ContentComponent,
     ProjectComponent,
     TeamComponent,
+    LoginComponent,
     ContactComponent,
     ClassesComponent,
     ClassesRegisterComponent,

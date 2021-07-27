@@ -87,6 +87,14 @@ a {
   margin-left: 10px;
 }
 
+.legend-forgot {
+  font-size: 15px;
+  text-decoration: underline;
+  color: #f27830;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
 .leg {
   width: 100%;
   text-align: end;
