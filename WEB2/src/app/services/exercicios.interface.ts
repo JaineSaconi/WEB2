@@ -7,3 +7,10 @@ export interface IExercicios {
   question: string;
   answers: IAnswers[]
 }
+
+export interface IUser {
+  id?: string;
+  name: string;
+  email: string;
+  password?: string;
+}
