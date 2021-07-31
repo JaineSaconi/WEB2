@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { User_MOCK } from '../teste/user-mock-teste';
 import { IUser } from './exercicios.interface';
 import { HttpClientService } from './http-client.service';
 
@@ -10,9 +11,11 @@ export class RequestServiceService {
 
   constructor(private webRequestService: HttpClientService) {
    }
-
     createUser(user: IUser) {
-     return this.webRequestService.post('register', { user });
+    const stringUser = JSON.stringify(user);
+
+    const teste = JSON.parse(stringUser);
+     return this.webRequestService.post('register', teste);
    }
 
     getTeste() {

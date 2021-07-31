@@ -16,7 +16,8 @@ export class HttpClientService {
    return  this.http.get(`${this.ROOT_URL}/${url}}`);
   }
 
-  post(url: string, payload: Object){
+  post(url: string, payload: JSON){
+    console.log(payload);
     return  this.http.post(`${this.ROOT_URL}/${url}`, payload);
   }
 
