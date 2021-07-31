@@ -16,7 +16,7 @@ export class RequestServiceService {
    }
 
     getTeste() {
-     const res=  this.webRequestService.get('get');
+     const res=  this.webRequestService.get('user');
      console.log(res);
      return res;
    }

@@ -20,16 +20,16 @@ export class HomeComponent implements OnInit {
   }
 
   addUser(): void {
-    // const res = this.requestService.createUser(this.user).subscribe((response: any) => {
-    //   console.log(response);
-    // });
+    const res = this.requestService.createUser(this.user).subscribe((response: any) => {
+      console.log(response);
+    });
 
     // console.log(res);
 
-    this.requestService.getTeste().subscribe(res => {
-      debugger
-      console.log(res);
-    })
+    // this.requestService.getTeste().subscribe(res => {
+    //   debugger
+    //   console.log(res);
+    // })
 
   }
 
