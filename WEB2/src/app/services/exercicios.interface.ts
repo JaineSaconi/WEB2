@@ -9,8 +9,17 @@ export interface IExercicios {
 }
 
 export interface IUser {
-  id?: string;
+  _id?: string;
   name: string;
   email: string;
   password?: string;
+  type?: number;
+  __v?: number;
+  createdAt?: string;
+  //1 - aluno, 2 = professor.
+}
+
+export interface IUserRes {
+ token: string;
+ user: IUser;
 }

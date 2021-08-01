@@ -1,0 +1,29 @@
+<span class="legend">Cadastro</span>
+
+<div class="main-register" [formGroup]="form">
+  <div fxLayout="column"
+  fxLayoutAlign="center center"
+  fxLayoutAlign.gt-sm="space-between center" >
+    <h3>EMAIL*</h3>
+    <input type="email" class="input" autofocus placeholder="email@email.com" formControlName="email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="email">
+  </div>
+
+  <div fxLayout="column"
+  fxLayoutAlign="center center"
+  class="register-container">
+    <h3>NOME*</h3>
+    <input type="text" class="input" autofocus placeholder="nome" formControlName="name" >
+  </div>
+
+  <div fxLayout="column"
+  fxLayoutAlign="center center"
+  class="register-container">
+    <h3>SENHA*</h3>
+    <input type="password" class="input" autofocus placeholder="**********" formControlName="password">
+  </div>
+
+  <div class="container-button cont-button">
+    <button class="button btn" routerLink="/">CANCELAR</button>
+    <button class="button" (click)="save()">CADASTRAR</button>
+  </div>
+</div>
