@@ -13,6 +13,7 @@ import 'prismjs/plugins/line-highlight/prism-line-highlight.js';
 import { OnboardingComponent } from './components/onboarding/onboarding.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InitialModule } from './components/initial/initial.module';
+import { OnboardingModule } from './components/onboarding/onboarding.module';
 
 @NgModule({
   declarations: [
@@ -23,9 +24,9 @@ import { InitialModule } from './components/initial/initial.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    MarkdownModule.forRoot(),
     BrowserAnimationsModule,
-    InitialModule
+    InitialModule,
+    //OnboardingModule,
   ],
   providers: [
 

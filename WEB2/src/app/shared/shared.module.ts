@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MarkdownModule } from 'ngx-markdown/src/markdown.module';
 
 @NgModule({
   declarations: [],
@@ -14,7 +15,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
   exports: [
     ReactiveFormsModule,
     FormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ]
 })
 export class SharedModule { }

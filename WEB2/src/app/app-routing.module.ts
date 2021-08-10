@@ -6,12 +6,6 @@ import { ForgotPasswordComponent } from './components/initial/forgot-password/fo
 
 const routes: Routes = [
   {
-    path: 'onboarding',
-    loadChildren: () => import('./components/onboarding/onboarding.module').then(
-      (m)=>m.OnboardingModule,
-    )
-  },
-  {
     path: '',
     component: LoginComponent
   },
@@ -23,10 +17,21 @@ const routes: Routes = [
     path: 'register',
     component: RegisterComponent
   },
+  {
+    path: 'onboarding',
+    loadChildren: () => import('./components/onboarding/onboarding.module').then(
+      (m)=>m.OnboardingModule,
+    )
+  },
+  // {
+  //   path: '**',
+  //   redirectTo: '',
+  // },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: []
 })
 export class AppRoutingModule { }

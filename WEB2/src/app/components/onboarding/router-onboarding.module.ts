@@ -1,7 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { HomeComponent } from './home/home.component';
-import { CommonModule } from '@angular/common';
 import { ProjectComponent } from './project/project.component';
 import { TeamComponent } from './team/team.component';
 import { ContactComponent } from './contact/contact.component';
@@ -44,4 +43,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class OnboardingModule { }
+export class OnboardingRoutingModule { }
