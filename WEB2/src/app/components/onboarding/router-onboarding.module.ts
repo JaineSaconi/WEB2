@@ -1,3 +1,4 @@
+import { OnboardingComponent } from './onboarding.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { HomeComponent } from './home/home.component';

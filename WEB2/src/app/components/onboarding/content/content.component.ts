@@ -11,8 +11,8 @@ import { MARKDOWN_CONTENT } from './markdown_content';
 })
 export class ContentComponent implements OnInit {
 
+  showExec: boolean = false;
   markdown: IMarkdown[] = MARKDOWN_CONTENT;
-  showExec = false;
   exercicios: IExercicios[] = EXERC_MOCK;
   constructor() { }
 
@@ -20,6 +20,6 @@ export class ContentComponent implements OnInit {
   }
 
   showExercise(res: boolean) {
-    this.showExec = res;
+   this.showExec = res;
   }
 }

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -14,11 +14,13 @@ import { OnboardingComponent } from './components/onboarding/onboarding.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InitialModule } from './components/initial/initial.module';
 import { OnboardingModule } from './components/onboarding/onboarding.module';
+import { MenuBarComponent } from './components/onboarding/menu-bar/menu-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OnboardingComponent,
+    MenuBarComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +33,9 @@ import { OnboardingModule } from './components/onboarding/onboarding.module';
   providers: [
 
   ],
-  bootstrap: [AppComponent]
+  exports:[
+    MenuBarComponent
+  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
