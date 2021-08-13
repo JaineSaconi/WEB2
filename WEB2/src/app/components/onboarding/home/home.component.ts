@@ -12,7 +12,7 @@ import { MARKDOWN_HOME } from './teste';
 export class HomeComponent implements OnInit {
 
   markdown = MARKDOWN_HOME;
-  user: IUser = User_MOCK;
+  //user: IUser = User_MOCK;
 
   constructor(private requestService: RequestServiceService) { }
 

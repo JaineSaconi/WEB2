@@ -20,6 +20,13 @@ export class RequestServiceService {
     return this.webRequestService.post('register', teste);
    }
 
+   login(user: IUser):Observable<Object> {
+    const stringUser = JSON.stringify(user);
+    const teste = JSON.parse(stringUser);
+
+    return this.webRequestService.post('register', teste);
+   }
+
     getTeste() {
      const res=  this.webRequestService.get('user');
      return res;
