@@ -12,7 +12,7 @@ h1 {
 
 h2 {
   font-size: 18px;
-  color: #f27830;
+  color: white;
 }
 
 h3 {
@@ -121,5 +121,11 @@ a {
   display: flex;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

@@ -27,12 +27,13 @@ import { OnboardingRoutingModule } from './router-onboarding.module';
     ContactComponent,
     ClassesComponent,
     ClassesRegisterComponent,
-    MenuBarComponent
    ],
   imports: [
+    CommonModule,
     OnboardingRoutingModule,
     MarkdownModule.forRoot(),
   ],
+
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 
 })
