@@ -1,6 +1,6 @@
 <span class="legend">Login</span>
 
-<div class="main-register">
+<div class="main-register" [formGroup]="form">
 
     <h3>Login</h3>
 
@@ -8,16 +8,16 @@
         <table class="content-button">
             <tr>
                 <td class="texts">Usuário:</td>
-                <td><input class="input-user" type="text" name="nome" size="45"> <br /></td>
+                <td><input class="input-user" type="text" name="nome" size="45" formControlName="email"> <br /></td>
             </tr>
             <tr>
                 <td class="texts">Senha:</td>
-                <td><input class="input-password" type="password" name="assunto" size="45"> <br /></td>
+                <td><input class="input-password" type="password" name="assunto" size="45" formControlName="password"> <br /></td>
             </tr>
         </table>
         <br />
         <span>
-            <button class="btn" routerLink="/">Entrar</button>
+            <button class="btn" (click)="authenticated()">Entrar</button>
 
             <button class="btn" routerLink="register">Cadastrar Usuário</button>
         </span>

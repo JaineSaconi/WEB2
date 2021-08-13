@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/initial/login/login.component';
 import { RegisterComponent } from './components/initial/register/register.component';
 import { ForgotPasswordComponent } from './components/initial/forgot-password/forgot-password.component';
+import { LoginGuardService } from './services/login.guard.service';
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
   },
   {
     path: 'onboarding',
+    canActivate: [LoginGuardService],
     loadChildren: () => import('./components/onboarding/onboarding.module').then(
       (m)=>m.OnboardingModule,
     )
