@@ -71,6 +71,9 @@ export class RegisterComponent implements OnInit {
       if(res) {
         this.router.navigateByUrl('');
         this.snackBar.open('Usuário cadastrado com sucesso','', {duration: 4000});
+       } else {
+        this.snackBar.open('erro ao cadastrar','', {duration: 4000});
+
        }
    });
   }

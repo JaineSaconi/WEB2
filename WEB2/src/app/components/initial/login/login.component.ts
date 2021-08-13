@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
    }
 
   ngOnInit(): void {
+
   }
 
   async authenticated(): Promise<void> {

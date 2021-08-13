@@ -21,7 +21,6 @@ export class HttpClientService {
 
   post(url: string, payload: JSON){
    const res = this.http.post(`${this.ROOT_URL}/${url}`, payload);
-    this.snackBar.open('email ja cadastrado','', {duration: 4000});
     return res;
   }
 

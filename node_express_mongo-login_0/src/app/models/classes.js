@@ -5,14 +5,18 @@ const ClassesSchema = new mongoose.Schema({
         type: Number,
         require: true,
     },
+    codigo: {
+        type: String,
+        require: true,
+    },
     descriptionClasses: {
         type: String,
         require: true,
     },
-    idAluno: {
+    idAluno:[{
         type: Number,
         require: true,
-    },
+    }],
     idProfessor: {
         type: Number,
         require: true,

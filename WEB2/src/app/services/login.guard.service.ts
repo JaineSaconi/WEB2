@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
-import { CanActivate } from '@angular/router';
+import { Injectable } from "@angular/core";
+import { CanActivate, Router } from "@angular/router";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class LoginGuardService implements CanActivate {
+export class LoginGuardService implements CanActivate{
 
   constructor(){}
   async canActivate(): Promise<boolean> {
@@ -12,7 +12,7 @@ export class LoginGuardService implements CanActivate {
 
     if(token){
       return true;
-    } else {
+    } else{
       return false;
     }
   }

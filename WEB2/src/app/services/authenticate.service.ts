@@ -10,7 +10,7 @@ import { ILogin } from "./interfaces/login.interface";
 
   export class AuthenticateService{
       user: IUser = {} as IUser;
-      
+
     constructor (private httpClientService: HttpClientService) {}
 
     login(login: ILogin): Observable<Object>{

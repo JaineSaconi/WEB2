@@ -11,12 +11,6 @@ const User = require('../models/user');
 
 const router = express.Router();
 
-// app.use(function (req, res, next) {
-//     res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
-//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//     next();
-//   });
-
 function generateToken(params =  {}) {
     return jwt.sign(params, authConfig.secret, {
         expiresIn: 86400,
