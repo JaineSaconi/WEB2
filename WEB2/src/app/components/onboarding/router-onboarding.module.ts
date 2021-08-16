@@ -31,7 +31,7 @@ const routes: Routes = [
     component: ClassesComponent
   },
   {
-    path: 'classes-register',
+    path: 'classes/classes-register',
     component: ClassesRegisterComponent
   },
   {

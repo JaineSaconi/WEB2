@@ -18,11 +18,5 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-    // console.log(res);
-
-    // this.requestService.getTeste().subscribe(res => {
-    //   debugger
-    //   console.log(res);
-    // })
 
 }

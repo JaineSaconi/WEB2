@@ -10,12 +10,16 @@ export class MenuBarComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private active: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    console.log(this.router.url);
-    //console.log(this.active);
+
+  }
+
+  logout(): void {
+    localStorage.setItem("token", "");
+    localStorage.setItem("user", "");
+    this.router.navigate(['/']);
   }
 
 

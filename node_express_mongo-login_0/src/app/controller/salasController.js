@@ -6,6 +6,7 @@ const Sala = require('../models/classes');
 const router = express.Router();
 
 router.post('/register', async (req, res) => {
+  const { codigo } = req.body;
 
   try{
     if( await Sala.findOne({ codigo }))

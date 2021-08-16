@@ -42,8 +42,10 @@ export class LoginComponent implements OnInit {
     this.resLogin = await this.authenticateService.login(this.login).pipe(take(1)).toPromise() as IResLogin;
 
     if(this.resLogin) {
-      localStorage.setItem("token", this.resLogin.token)
-      localStorage.setItem("user", this.resLogin.user.toString());
+      localStorage.setItem("token", this.resLogin.token);
+
+      const user = JSON.stringify(this.resLogin.user);
+      localStorage.setItem("user", user);
 
       this.router.navigate(["onboarding"]);
     } else {

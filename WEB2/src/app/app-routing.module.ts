@@ -6,23 +6,12 @@ import { RegisterComponent } from './components/initial/register/register.compon
 import { ForgotPasswordComponent } from './components/initial/forgot-password/forgot-password.component';
 import { LoginGuardService } from './services/login.guard.service';
 import { OnboardingComponent } from './components/onboarding/onboarding.component';
+import { AuthGuardService } from './services/interfaces/auth.guard.service';
 
 const routes: Routes = [
-
-  // {
-  //   path: '',
-  //   component: LoginComponent
-  // },
-  // {
-  //   path: 'forgot-password',
-  //   component: ForgotPasswordComponent
-  // },
-  // {
-  //   path: 'register',
-  //   component: RegisterComponent
-  // },
   {
     path: '',
+    canActivate: [AuthGuardService],
     component: LoginComponent
   },
   {
@@ -40,10 +29,10 @@ const routes: Routes = [
       (m)=>m.OnboardingModule,
     ), component: OnboardingComponent
   },
-  // {
-  //   path: '**',
-  //   redirectTo: '',
-  // },
+  {
+    path: '**',
+    redirectTo: '',
+  },
 ];
 
 @NgModule({

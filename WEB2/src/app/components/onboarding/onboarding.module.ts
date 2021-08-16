@@ -16,6 +16,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { OnboardingRoutingModule } from './router-onboarding.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -32,6 +33,8 @@ import { OnboardingRoutingModule } from './router-onboarding.module';
     CommonModule,
     OnboardingRoutingModule,
     MarkdownModule.forRoot(),
+    ReactiveFormsModule,
+    FormsModule,
   ],
 
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]

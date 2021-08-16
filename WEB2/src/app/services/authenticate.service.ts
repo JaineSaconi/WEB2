@@ -10,8 +10,10 @@ import { ILogin } from "./interfaces/login.interface";
 
   export class AuthenticateService{
       user: IUser = {} as IUser;
+      rot: string = 'auth';
 
-    constructor (private httpClientService: HttpClientService) {}
+    constructor (
+      private httpClientService: HttpClientService) {}
 
     login(login: ILogin): Observable<Object>{
         const stringify = JSON.stringify(login);
@@ -22,10 +24,11 @@ import { ILogin } from "./interfaces/login.interface";
 
     getUser(): IUser {
         const res = localStorage.getItem("user");
+
         if(res){
-            this.user = JSON.parse(res);
+          this.user = JSON.parse(res) ;
         }
-        return this.user;
+          return  this.user;
     }
 
   }
