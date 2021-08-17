@@ -22,7 +22,10 @@ const ClassesSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
-
+    isShow: {
+        type: Boolean,
+        required: false
+    },
 });
 
 const Classes = mongoose.model('Classes', ClassesSchema);

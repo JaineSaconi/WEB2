@@ -23,3 +23,22 @@ export interface IUserRes {
  token: string;
  user: IUser;
 }
+
+export interface ISala {
+  codigo: string;
+  description: string;
+  idAluno?: string[];
+  idProfessor?: string;
+  isShow: boolean;
+}
+
+export interface ISalaRes {
+  _id?: string;
+  codigo: string;
+  description: string;
+  idAluno?: string[];
+  idProfessor?: string;
+  createdAt?: string;
+  __v: number;
+  isShow: boolean;
+}

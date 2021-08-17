@@ -5,10 +5,10 @@
   </div>
 
   <div class="container-list">
-    <ul class="list-group" *ngFor="let turma of turmas">
-      <li class="list-group-item active" aria-current="true">
-        <span> {{turma.description}} - COD: {{turma.codigo}} </span>
-        <button class="button-white"> Arquivar</button>
+    <ul class="list-group" *ngFor="let sala of salas">
+      <li class="list-group-item active" aria-current="true" *ngIf="sala.isShow">
+        <span> COD: {{sala.codigo}} </span>
+        <button class="button-white" (click)="atualize()"> Arquivar</button>
       </li>
     </ul>
   </div>

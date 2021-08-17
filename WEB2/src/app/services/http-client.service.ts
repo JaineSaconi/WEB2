@@ -13,10 +13,11 @@ export class HttpClientService {
   }
 
    get(url: string){
-   return  this.http.get(`${this.ROOT_URL}/${url}}`);
+   return  this.http.get(`${this.ROOT_URL}/${url}`);
   }
 
   post(url: string, payload: JSON){
+    console.log(payload);
    const res = this.http.post(`${this.ROOT_URL}/${url}`, payload);
 
     return res;

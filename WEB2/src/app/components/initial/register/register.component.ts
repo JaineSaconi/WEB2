@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
+import { ChildActivationStart, Router } from '@angular/router';
 import { RequestServiceService } from 'src/app/services/request-service.service';
+import { SalaDialogComponent } from '../../dialogs/sala-dialog/sala-dialog.component';
 import { IUser, IUserRes } from './../../../services/exercicios.interface';
 
 @Component({
@@ -20,31 +22,27 @@ export class RegisterComponent implements OnInit {
     private fb: FormBuilder,
     public snackBar: MatSnackBar,
     private router: Router,
+    public dialog: MatDialog,
     ) {
       this.form = this.fb.group({
         email: [null, [Validators.required, Validators.email]],
         name: [null, [Validators.required]],
         password: [null, [Validators.required]],
+        type: [null, [Validators.required]]
       });
     }
 
   ngOnInit(): void {
   }
 
+  teste1() {
+    console.log();
+
+  }
+
   save(): void {
     const valid = this.form.controls.email.status;
     const email = this.form.controls.email.value;
-
-    const aluno = email.includes('aluno');
-    const professor = email.includes('professor');
-
-    if(this.form.controls.email.value === "" || !this.form.controls.email.value || valid === "INVALID" ){
-      this.snackBar.open('email inválido','', {duration: 2000});
-      return;
-    } else if(!aluno && !professor){
-      this.snackBar.open('formato de email invalido. Deve conter "alunos" ou "professor"','', {duration: 4000});
-      return;
-    }
 
     if(this.form.controls.name.value === "" || !this.form.controls.name.value ){
       this.snackBar.open('nome inválido','', {duration: 2000});
@@ -61,10 +59,14 @@ export class RegisterComponent implements OnInit {
       return;
     }
 
+    if(!this.form.controls.type.value) {
+      this.snackBar.open('É necessário selecionar se é aluno ou professor','', {duration: 4000});
+      return
+    }
     this.user.email = this.form.controls.email.value;
     this.user.name = this.form.controls.name.value;
     this.user.password = this.form.controls.password.value;
-    this.user.type =  aluno ? 1:2;
+    this.user.type =  this.form.controls.type.value;
 
 
    this.requestService.createUser(this.user).subscribe(res =>{
@@ -76,5 +78,16 @@ export class RegisterComponent implements OnInit {
 
        }
    });
+  }
+
+  async openDialog() {
+    const dialogRef = this.dialog.open(SalaDialogComponent, {
+      data: {},
+      ...SalaDialogComponent.defaultConfig
+    });
+    const res = await dialogRef.afterClosed().toPromise();
+    // if(res) {
+    //   this.user
+    // }
   }
 }

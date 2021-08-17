@@ -13,9 +13,16 @@ export class HttpRoomService {
     this.ROOT_URL = "http://localhost:3000/room";
   }
 
+  get(url: string) {
+    return  this.http.get(`${this.ROOT_URL}/${url}`);
+  }
+
   post(url: string, payload: JSON){
     const res = this.http.post(`${this.ROOT_URL}/${url}`, payload);
-
      return res;
+   }
+
+   patch(url: string, payload: JSON) {
+    return this.http.patch(`${this.ROOT_URL}/${url}`, payload);
    }
 }

@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
+
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { ISala } from './interfaces/sala.interface';
+import { ISala } from './exercicios.interface';
 import { HttpRoomService } from './http-room.service';
 
 @Injectable({
@@ -12,10 +12,22 @@ export class RoomsService {
   constructor(private http: HttpRoomService) {
   }
 
-  async registerRoom( room: ISala): Promise<Object> {
+   registerRoom( room: ISala): Observable<Object> {
     const stringify = JSON.stringify(room);
     const roomJson = JSON.parse(stringify);
 
-     return await this.http.post(`register`, roomJson);
+     return  this.http.post(`register`, roomJson);
+   }
+
+   getSalasByProfessorId(id: string) {
+
+    return this.http.get(`salas/${id}`);
+   }
+
+   updateSala(isShow: boolean, id: string) {
+    const stringify = JSON.stringify(isShow);
+    const isShowJson = JSON.parse(stringify);
+
+    return this.http.patch(`update/${id}`, isShowJson);
    }
 }

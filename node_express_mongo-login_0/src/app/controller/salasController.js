@@ -1,5 +1,6 @@
 const express = require('express');
 const authConfig = require('../../config/auth');
+const mongoose =  require('../../database');
 
 const Sala = require('../models/classes');
 
@@ -22,4 +23,33 @@ router.post('/register', async (req, res) => {
   }
 });
 
+router.get("/salas/:idProfessor", async (req, res) => {
+  const idProfessor = req.params.idProfessor;
+
+  try{
+    const salas = await Sala.find({idProfessor});
+
+    res.json(salas);
+  } catch(err){
+    res.status(500).send({message: "nao deu certo"});
+  }
+});
+
+router.patch('/update/:id' , async (req, res) => {
+    const _id =  req.params.id
+
+    if(!_id){
+      res.json({message: "sem id"});
+    }
+  try {
+    const updateSala = await Sala.updateOne({_id: req.params.id}, 
+      {$set: {isShow: req.body.isShow}});
+
+    res.json(updateSala);
+  } catch (err) {
+    res.json({message: err});
+  }
+})
 module.exports = app => app.use('/room', router);
+
+//611af650a895fd4dd82ee22a

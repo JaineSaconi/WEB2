@@ -26,9 +26,4 @@ export class RequestServiceService {
 
     return this.webRequestService.post('register', teste);
    }
-
-    getTeste() {
-     const res=  this.webRequestService.get('user');
-     return res;
-   }
 }

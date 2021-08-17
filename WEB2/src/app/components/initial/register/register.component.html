@@ -22,8 +22,26 @@
     <input type="password" class="input" autofocus placeholder="**********" formControlName="password">
   </div>
 
+  <div fxLayoutAlign="center center"
+  class="register-container">
+
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" formControlName="type" value="1">
+    <label class="form-check-label" for="flexRadioDefault1" >
+      Aluno
+    </label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked formControlName="type" value="2">
+    <label class="form-check-label" for="flexRadioDefault2" >
+      Professor
+    </label>
+  </div>
+
+  </div>
+
   <div class="container-button cont-button">
     <button class="button btn" routerLink="/">CANCELAR</button>
-    <button class="button" (click)="save()">CADASTRAR</button>
+    <button class="button" (click)="openDialog()">CADASTRAR</button>
   </div>
 </div>
