@@ -35,11 +35,6 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  teste1() {
-    console.log();
-
-  }
-
   async save() {
     const valid = this.form.controls.email.status;
     const email = this.form.controls.email.value;

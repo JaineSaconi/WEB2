@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { take } from 'rxjs/operators';
 import { AuthenticateService } from 'src/app/services/authenticate.service';
 import { ILogin } from 'src/app/services/interfaces/login.interface';
-import { IResLogin } from 'src/app/services/interfaces/res_login.interface';
+import { IResLogin } from 'src/app/services/Interfaces/res_login.interface';
 
 @Component({
   selector: 'app-login',

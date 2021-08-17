@@ -17,7 +17,6 @@ export class HttpClientService {
   }
 
   post(url: string, payload: JSON){
-    console.log(payload);
    const res = this.http.post(`${this.ROOT_URL}/${url}`, payload);
 
     return res;

@@ -35,6 +35,18 @@ router.get("/salas/:idProfessor", async (req, res) => {
   }
 });
 
+router.get("/sala/:codSala", async (req, res) => {
+  const codigo = req.params.codSala;
+
+  try{
+    const salas = await Sala.find({codigo});
+
+    res.json(salas);
+  } catch(err){
+    res.status(500).send({message: "nao deu certo"});
+  }
+});
+
 router.patch('/update/:id' , async (req, res) => {
     const _id =  req.params.id
 

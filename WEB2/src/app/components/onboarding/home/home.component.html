@@ -5,8 +5,10 @@
         <markdown class="text" [data]="markdown"></markdown>
     </div>
 
-    <div class="content-button">
-        <h1>INTRODUÇÃO A PROBABILIDADE</h1>
+    <div class="content-button" *ngIf="user.type == 1">
+      <div *ngFor="let sal of sala">
+        <h1>{{sal.description}}</h1>
         <button class="btn" routerLink="/content">acessar</button>
+      </div>
     </div>
 </div>

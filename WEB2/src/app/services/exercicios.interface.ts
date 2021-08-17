@@ -13,7 +13,7 @@ export interface IUser {
   name: string;
   email: string;
   password?: string;
-  type?: number;
+  type: number;
   __v?: number;
   createdAt?: string;
   codSala?: string;

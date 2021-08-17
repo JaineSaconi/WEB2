@@ -24,14 +24,12 @@ export class ClassesComponent implements OnInit {
    this.user = this.authService.getUser();
    if(this.user._id){
      this.salas = await this.roomService.getSalasByProfessorId(this.user?._id).pipe(take(1)).toPromise() as ISalaRes[];
-     console.log(this.salas);
    }
   }
 
   async atualize() {
     if(this.user._id){
       const res = await this.roomService.updateSala(false, this.user._id).pipe(take(1)).toPromise();
-      console.log(res);
     }
   }
 

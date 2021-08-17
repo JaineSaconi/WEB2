@@ -24,6 +24,10 @@ export class RoomsService {
     return this.http.get(`salas/${id}`);
    }
 
+   getSalaByCodigo(codSala: string){
+    return this.http.get(`sala/${codSala}`);
+   }
+
    updateSala(isShow: boolean, id: string) {
     const stringify = JSON.stringify(isShow);
     const isShowJson = JSON.parse(stringify);

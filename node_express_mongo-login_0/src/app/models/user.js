@@ -20,7 +20,7 @@ const UserSchema = new mongoose.Schema({
     type: {
         type: Number,
         required: true,
-        select: false,
+        select: true,
     },
     passwordResetToken: {
         type: String,
