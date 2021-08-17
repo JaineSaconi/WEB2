@@ -17,6 +17,7 @@ export interface IUser {
   __v?: number;
   createdAt?: string;
   codSala?: string;
+  qtdQuestoesCertas?: number;
   //1 - aluno, 2 = professor.
 }
 
@@ -42,4 +43,10 @@ export interface ISalaRes {
   createdAt?: string;
   __v: number;
   isShow: boolean;
+}
+
+export interface IQuestion {
+    idQuestion: string;
+    idAluno: string;
+    resposta: number;
 }
