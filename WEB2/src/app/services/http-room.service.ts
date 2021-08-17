@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 
 
@@ -22,7 +22,11 @@ export class HttpRoomService {
      return res;
    }
 
-   patch(url: string, payload: JSON) {
-    return this.http.patch(`${this.ROOT_URL}/${url}`, payload);
+   patch(url: string, payload: JSON, id: string) {
+
+    const config = new HttpHeaders().set('Content-Type', 'application/json')
+                                .set('Accept', 'application/json')
+
+    return this.http.patch(`${this.ROOT_URL}/${url}/${id}`, payload , {headers: config});
    }
 }

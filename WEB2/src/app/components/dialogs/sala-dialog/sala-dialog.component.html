@@ -1,6 +1,9 @@
-<div>
+<div  [formGroup]="form">
 <h3>Porfavor, digite a sala que deseja entrar</h3>
-<input class="input">
+<input class="input" formControlName="class">
 
-<button class="button btn" (click)="saveAndClose()" >CANCELAR</button>
+  <div fxLayout="row" class="btn-container">
+    <button class="button btn"  mat-dialog-close>CANCELAR</button>
+    <button class="button btn" (click)="saveAndClose()" [mat-dialog-close]="data">CADASTRAR</button>
+  </div>
 </div>

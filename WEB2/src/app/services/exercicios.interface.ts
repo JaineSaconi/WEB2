@@ -16,6 +16,7 @@ export interface IUser {
   type?: number;
   __v?: number;
   createdAt?: string;
+  codSala?: string;
   //1 - aluno, 2 = professor.
 }
 

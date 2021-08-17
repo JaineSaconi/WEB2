@@ -40,19 +40,24 @@ export class RegisterComponent implements OnInit {
 
   }
 
-  save(): void {
+  async save() {
     const valid = this.form.controls.email.status;
     const email = this.form.controls.email.value;
 
+      if(!valid || !email){
+        this.snackBar.open('email inválido','', {duration: 4000});
+      return;
+      }
+
     if(this.form.controls.name.value === "" || !this.form.controls.name.value ){
-      this.snackBar.open('nome inválido','', {duration: 2000});
+      this.snackBar.open('nome inválido','', {duration: 4000});
       return;
     }
 
     const senha: string = this.form.controls.password.value;
 
     if(this.form.controls.password.value === "" || !this.form.controls.password.value ){
-      this.snackBar.open('senha inválida','', {duration: 2000});
+      this.snackBar.open('senha inválida','', {duration: 4000});
       return;
     } else if(senha.length < 8) {
       this.snackBar.open('senha requer no mínimo 8 caracteres','', {duration: 4000});
@@ -63,11 +68,23 @@ export class RegisterComponent implements OnInit {
       this.snackBar.open('É necessário selecionar se é aluno ou professor','', {duration: 4000});
       return
     }
+
+    if(this.form.controls.type.value == 1){
+     const codSala = await this.openDialog();
+
+      if(!codSala) {
+        this.snackBar.open('É necessário informar o código da sala','', {duration: 4000});
+        return
+      }
+      else {
+        this.user.codSala = codSala;
+      }
+    }
+
     this.user.email = this.form.controls.email.value;
     this.user.name = this.form.controls.name.value;
     this.user.password = this.form.controls.password.value;
     this.user.type =  this.form.controls.type.value;
-
 
    this.requestService.createUser(this.user).subscribe(res =>{
       if(res) {
@@ -86,8 +103,8 @@ export class RegisterComponent implements OnInit {
       ...SalaDialogComponent.defaultConfig
     });
     const res = await dialogRef.afterClosed().toPromise();
-    // if(res) {
-    //   this.user
-    // }
+    if(res) {
+      return res.sala;
+    }
   }
 }

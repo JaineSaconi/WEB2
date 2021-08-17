@@ -29,7 +29,7 @@ export class SalaDialogComponent {
 
   saveAndClose() {
 
-    if(!this.form.controls.value){
+    if(!this.form.controls.class.value){
       this.snackBar.open('Digite o código da sala','', {duration: 4000});
       return;
     } else {

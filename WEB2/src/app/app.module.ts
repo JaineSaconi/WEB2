@@ -5,8 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import {MatDialogModule} from '@angular/material/dialog';
-
 import 'prismjs';
 import 'prismjs/components/prism-typescript.min.js';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.js';
@@ -15,6 +13,7 @@ import { OnboardingComponent } from './components/onboarding/onboarding.componen
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InitialModule } from './components/initial/initial.module';
 import { MenuBarComponent } from './components/onboarding/menu-bar/menu-bar.component';
+import { DialogsModule } from './components/dialogs/dialogs.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +27,7 @@ import { MenuBarComponent } from './components/onboarding/menu-bar/menu-bar.comp
     HttpClientModule,
     BrowserAnimationsModule,
     InitialModule,
-    MatDialogModule
+    DialogsModule
   ],
   providers: [
 

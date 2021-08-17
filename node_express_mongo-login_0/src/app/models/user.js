@@ -30,6 +30,10 @@ const UserSchema = new mongoose.Schema({
         type: Date,
         select: false,
     },
+    codSala: {
+        type: String,
+        required: false,
+    },
     createdAt: {
         type: Date,
         default: Date.now,
