@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   markdown = MARKDOWN_HOME;
   //user: IUser = User_MOCK;
   user: IUser = {} as IUser;
-  sala: ISalaRes[] = {} as ISalaRes[];
+  salas: ISalaRes[] = {} as ISalaRes[];
 
   constructor(
     private requestService: RequestServiceService,
@@ -29,7 +29,10 @@ export class HomeComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     this.user = this.authService.getUser();
     if(this.user.type === 1 && this.user.codSala){
-       this.sala = await this.roomService.getSalaByCodigo(this.user.codSala).pipe(take(1)).toPromise() as ISalaRes[]
+       this.salas = await this.roomService.getSalaByCodigo(this.user.codSala).pipe(take(1)).toPromise() as ISalaRes[]
+    }
+    if(this.user.type === 2 && this.user._id){
+      this.salas = await this.roomService.getSalasByProfessorId(this.user?._id).pipe(take(1)).toPromise() as ISalaRes[];
     }
   }
 
