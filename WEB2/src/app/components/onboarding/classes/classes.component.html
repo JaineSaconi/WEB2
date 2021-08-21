@@ -8,7 +8,7 @@
     <ul class="list-group" *ngFor="let sala of salas">
       <li class="list-group-item active" aria-current="true" *ngIf="sala.isShow">
         <span> COD: {{sala.codigo}} </span>
-        <button class="button-white" (click)="atualize()"> Arquivar</button>
+        <button class="button-white" (click)="atualize(sala?._id)"> Arquivar</button>
       </li>
     </ul>
   </div>

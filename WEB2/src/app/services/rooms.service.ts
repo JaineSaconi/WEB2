@@ -4,11 +4,16 @@ import { Injectable } from '@angular/core';
 import { ISala } from './exercicios.interface';
 import { HttpRoomService } from './http-room.service';
 
+export interface IPutSala{
+  isShow: boolean;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class RoomsService {
 
+  att: IPutSala = {} as IPutSala;
   constructor(private http: HttpRoomService) {
   }
 
@@ -29,8 +34,11 @@ export class RoomsService {
    }
 
    updateSala(isShow: boolean, id: string) {
-    const stringify = JSON.stringify(isShow);
+     this.att.isShow = isShow;
+    const stringify = JSON.stringify(this.att);
     const isShowJson = JSON.parse(stringify);
+
+    console.log(stringify);
 
     return this.http.patch('update', isShowJson, id);
    }

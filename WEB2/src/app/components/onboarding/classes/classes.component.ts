@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { take } from 'rxjs/operators';
 import { AuthenticateService } from 'src/app/services/authenticate.service';
 import { ISalaRes, IUser } from 'src/app/services/exercicios.interface';
+import { IResPut } from 'src/app/services/Interfaces/resPut.interface';
 import { RoomsService } from 'src/app/services/rooms.service';
 
 @Component({
@@ -27,9 +28,12 @@ export class ClassesComponent implements OnInit {
    }
   }
 
-  async atualize() {
-    if(this.user._id){
-      const res = await this.roomService.updateSala(false, this.user._id).pipe(take(1)).toPromise();
+  async atualize(id: string | undefined) {
+    if(id){
+      const res = await this.roomService.updateSala(false, id).pipe(take(1)).toPromise() as IResPut;
+      if(res.n === 1){
+        window.location.reload();
+      }
     }
   }
 
