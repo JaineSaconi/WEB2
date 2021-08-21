@@ -5,8 +5,20 @@
         <markdown class="text" [data]="markdown"></markdown>
     </div>
 
-    <div class="content-button">
-        <h1>INTRODUÇÃO A PROBABILIDADE</h1>
+    <div class="content-button" *ngIf="user.type == 1">
+      <div *ngFor="let sala of salas">
+        <h1>{{sala.description}}</h1>
         <button class="btn" routerLink="/content">acessar</button>
+      </div>
     </div>
+
+    <div>
+    <div class="container-list" *ngIf="user.type == 2">
+      <ul class="list-group" *ngFor="let sala of salas">
+        <li class="list-group-item active" aria-current="true" *ngIf="sala.isShow">
+          <span> COD: {{sala.codigo}} </span>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>

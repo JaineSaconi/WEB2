@@ -1,0 +1,10 @@
+.btn {
+  padding: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+}

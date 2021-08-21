@@ -20,7 +20,7 @@ const UserSchema = new mongoose.Schema({
     type: {
         type: Number,
         required: true,
-        select: false,
+        select: true,
     },
     passwordResetToken: {
         type: String,
@@ -29,6 +29,14 @@ const UserSchema = new mongoose.Schema({
     passwordResetExpires: {
         type: Date,
         select: false,
+    },
+    codSala: {
+        type: String,
+        required: false,
+    },
+    qtdQuestoesCertas:{
+        type: Number,
+        required: false
     },
     createdAt: {
         type: Date,

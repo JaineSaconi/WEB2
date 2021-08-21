@@ -1,27 +1,31 @@
 const mongoose =  require('../../database');
 
 const ClassesSchema = new mongoose.Schema({
-    idClasses: {
-        type: Number,
+    codigo: {
+        type: String,
+        unique: true,
         require: true,
     },
-    descriptionClasses: {
+    description: {
         type: String,
         require: true,
     },
-    idAluno: {
-        type: Number,
-        require: true,
-    },
+    idAluno:[{
+        type: String,
+        require: false,
+    }],
     idProfessor: {
-        type: Number,
-        require: true,
+        type: String,
+        require: false,
     },
     createdAt: {
         type: Date,
         default: Date.now,
     },
-
+    isShow: {
+        type: Boolean,
+        required: false
+    },
 });
 
 const Classes = mongoose.model('Classes', ClassesSchema);

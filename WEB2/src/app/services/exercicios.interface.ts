@@ -13,13 +13,40 @@ export interface IUser {
   name: string;
   email: string;
   password?: string;
-  type?: number;
+  type: number;
   __v?: number;
   createdAt?: string;
+  codSala?: string;
+  qtdQuestoesCertas?: number;
   //1 - aluno, 2 = professor.
 }
 
 export interface IUserRes {
  token: string;
  user: IUser;
+}
+
+export interface ISala {
+  codigo: string;
+  description: string;
+  idAluno?: string[];
+  idProfessor?: string;
+  isShow: boolean;
+}
+
+export interface ISalaRes {
+  _id?: string;
+  codigo: string;
+  description: string;
+  idAluno?: string[];
+  idProfessor?: string;
+  createdAt?: string;
+  __v: number;
+  isShow: boolean;
+}
+
+export interface IQuestion {
+    idQuestion: string;
+    idAluno: string;
+    resposta: number;
 }

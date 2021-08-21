@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { IUser } from 'src/app/services/exercicios.interface';
+import { AuthenticateService } from 'src/app/services/authenticate.service';
 
 @Component({
   selector: 'app-menu-bar',
@@ -8,14 +10,21 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class MenuBarComponent implements OnInit {
 
+  user: IUser = {} as IUser;
+
   constructor(
     private router: Router,
-    private active: ActivatedRoute
+    private authService: AuthenticateService
   ) { }
 
-  ngOnInit(): void {
-    console.log(this.router.url);
-    //console.log(this.active);
+  async ngOnInit(): Promise<void> {
+    this.user = this.authService.getUser();
+  }
+
+  logout(): void {
+    localStorage.setItem("token", "");
+    localStorage.setItem("user", "");
+    this.router.navigate(['/']);
   }
 
 

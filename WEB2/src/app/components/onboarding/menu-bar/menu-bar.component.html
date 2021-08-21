@@ -6,23 +6,23 @@
             <a class="nav-link" aria-current="page" href="">HOME</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="content">PROBABILIDADE</a>
+            <a class="nav-link" href="onboarding/content">PROBABILIDADE</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="project">PROJETO</a>
+            <a class="nav-link " href="onboarding/project">PROJETO</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="team">EQUIPE</a>
+            <a class="nav-link " href="onboarding/team">EQUIPE</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="contact">CONTATO</a>
+            <a class="nav-link " href="onboarding/contact">CONTATO</a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link " href="classes">TURMAS</a>
-          </li> -->
+          <li class="nav-item" *ngIf="user.type == 2">
+            <a class="nav-link " href="onboarding/classes">TURMAS</a>
+          </li>
         </ul>
         <div class="d-flex">
-          <a class="nav-link me-2" routerLink="/login">SAIR</a>
+          <a class="nav-link me-2" (click)="logout()">SAIR</a>
         </div>
       </div>
     </div>

@@ -18,11 +18,24 @@
 }
 
 .main_home {
-  width: 100%;
+  width: 90%;
   padding: 30px;
   display: block;
 }
 
 .text {
   color: white;
+}
+
+.container-list {
+  margin-top: 20px;
+}
+
+.list-group-item {
+  background-color: #f27830;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
 }
