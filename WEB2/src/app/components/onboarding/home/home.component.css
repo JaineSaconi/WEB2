@@ -39,3 +39,9 @@
   display: flex;
   align-items: center;
 }
+
+.align {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
