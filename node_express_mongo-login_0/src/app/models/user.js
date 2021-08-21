@@ -34,6 +34,10 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: false,
     },
+    qtdQuestoesCertas:{
+        type: Number,
+        required: false
+    },
     createdAt: {
         type: Date,
         default: Date.now,

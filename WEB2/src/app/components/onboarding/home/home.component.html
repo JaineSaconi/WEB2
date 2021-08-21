@@ -11,6 +11,8 @@
         <button class="btn" routerLink="/content">acessar</button>
       </div>
     </div>
+
+    <div>
     <div class="container-list" *ngIf="user.type == 2">
       <ul class="list-group" *ngFor="let sala of salas">
         <li class="list-group-item active" aria-current="true" *ngIf="sala.isShow">
@@ -18,4 +20,5 @@
         </li>
       </ul>
     </div>
+  </div>
 </div>
