@@ -80,6 +80,7 @@ export class RegisterComponent implements OnInit {
     this.user.name = this.form.controls.name.value;
     this.user.password = this.form.controls.password.value;
     this.user.type =  this.form.controls.type.value;
+    this.user.hasStarted = false;
 
    this.requestService.createUser(this.user).subscribe(res =>{
       if(res) {

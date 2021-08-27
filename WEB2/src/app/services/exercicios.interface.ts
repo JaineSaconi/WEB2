@@ -2,12 +2,6 @@ export interface IAnswers {
   text: string;
 }
 
-export interface IExercicios {
-  title: string;
-  question: string;
-  answers: IAnswers[]
-}
-
 export interface IUser {
   _id?: string;
   name: string;
@@ -18,6 +12,7 @@ export interface IUser {
   createdAt?: string;
   codSala?: string;
   qtdQuestoesCertas?: number;
+  hasStarted: boolean;
   //1 - aluno, 2 = professor.
 }
 
@@ -46,7 +41,37 @@ export interface ISalaRes {
 }
 
 export interface IQuestion {
-    idQuestion: string;
-    idAluno: string;
-    resposta: number;
+    _id?: string;
+    _idQuestion?: string;
+    descriptionQuestion: string;
+    opt1: string;
+    opt2: string;
+    opt3: string;
+    opt4: string;
+    dificulty: number;
+    answer: string;
+}
+
+export interface IUserQuestion {
+  userid: string;
+  questions: [{
+    qid: string;
+    answers: boolean[];
+    selected: string[];
+  }];
+  _id: string;
+}
+
+export interface IUserQuestionAnswers {
+  qid: string;
+  answers: boolean[];
+  selected: string[];
+}
+
+export interface IQuest {
+  questions?: [{
+    qid: string;
+    answers: boolean[];
+    selected: string[];
+  }];
 }

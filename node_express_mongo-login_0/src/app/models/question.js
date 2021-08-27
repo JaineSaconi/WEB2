@@ -10,29 +10,33 @@ const QuestionSchema = new mongoose.Schema({
         require: true,
     },
     opt1: {
-        type: Boolean,
+        type: String,
         require: true,
     },
     opt2: {
-        type: Boolean,
+        type: String,
         require: true,
     },
     opt3: {
-        type: Boolean,
+        type: String,
         require: true,
     },    
     opt4: {
-        type: Boolean,
+        type: String,
         require: true,
     },
     opt5: {
-        type: Boolean,
+        type: String,
         require: true,
     },
     dificulty: {
         type: Number,
         require: true,
     },
+    answer: {
+        type: String,
+        required: true
+    }
 });
 
 const Question = mongoose.model('Question', QuestionSchema);

@@ -38,8 +38,6 @@ export class RoomsService {
     const stringify = JSON.stringify(this.att);
     const isShowJson = JSON.parse(stringify);
 
-    console.log(stringify);
-
     return this.http.patch('update', isShowJson, id);
    }
 }
