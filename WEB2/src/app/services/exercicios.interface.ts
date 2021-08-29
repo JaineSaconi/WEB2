@@ -76,3 +76,10 @@ export interface IUserReport {
  respostas: string[];
  media: number;
 }
+
+export interface IContact {
+  nomeContact: string;
+  emailContact: string;
+  subjectContact: string;
+  messageContact: string;
+}
