@@ -50,3 +50,10 @@ export interface IQuestion {
     idAluno: string;
     resposta: number;
 }
+
+export interface IContact {
+  nomeContact: string;
+  emailContact: string;
+  subjectContact: string;
+  messageContact: string;
+}
