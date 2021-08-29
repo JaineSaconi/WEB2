@@ -1,3 +1,4 @@
+import { ReportComponent } from './report/report.component';
 import { OnboardingComponent } from './onboarding.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -37,7 +38,11 @@ const routes: Routes = [
   {
     path: 'content',
     component: ContentComponent
-  }
+  },
+  {
+    path: 'report',
+    component: ReportComponent
+  },
 ]
 
 @NgModule({

@@ -1,7 +1,7 @@
 <span class="legend">PROBABILIDADE</span>
 
 <div class="main" >
-  <!-- <div *ngIf="!showExec">
+  <div *ngIf="!showExec">
     <h3>INTRODUÇÃO A PROBABILIDADE</h3>
     <div *ngFor="let mark of markdown">
       <div class="container mt-20px">
@@ -16,35 +16,35 @@
     <div class="align-button">
       <button class="button" (click)="showExercise(true)"> EXERCÍCIOS DE FIXAÇÃO</button>
     </div>
-  </div> -->
+  </div>
 
   <div *ngIf="showExec">
       <div class="container" [formGroup]="form">
         <h4>{{auxQuestion.descriptionQuestion}}</h4>
 
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="opt" id="flexRadioDefault1" formControlName="opt" value="opt1">
+          <input class="form-check-input" type="radio" name="opt" id="flexRadioDefault1" formControlName="opt" value="{{auxQuestion.opt1}}">
           <label class="form-check-label" for="opt">
             <a>{{auxQuestion.opt1}}</a>
           </label>
         </div>
 
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="opt" id="flexRadioDefault1" formControlName="opt" value="opt2">
+          <input class="form-check-input" type="radio" name="opt" id="flexRadioDefault1" formControlName="opt" value="{{auxQuestion.opt2}}">
           <label class="form-check-label" for="opt">
             <a>{{auxQuestion.opt2}}</a>
           </label>
         </div>
 
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="opt" id="flexRadioDefault1" formControlName="opt" value="opt3">
+          <input class="form-check-input" type="radio" name="opt" id="flexRadioDefault1" formControlName="opt" value="{{auxQuestion.opt3}}">
           <label class="form-check-label" for="opt">
             <a>{{auxQuestion.opt3}}</a>
           </label>
         </div>
 
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="opt" id="flexRadioDefault1" formControlName="opt" value="opt4">
+          <input class="form-check-input" type="radio" name="opt" id="flexRadioDefault1" formControlName="opt" value="{{auxQuestion.opt4}}">
           <label class="form-check-label" for="opt">
             <a>{{auxQuestion.opt4}}</a>
           </label>

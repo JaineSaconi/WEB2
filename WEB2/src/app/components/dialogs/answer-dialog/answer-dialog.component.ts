@@ -1,3 +1,4 @@
+import { ISala } from './../../../services/Interfaces/sala.interface';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogConfig, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
@@ -14,11 +15,10 @@ export class AnswerDialogComponent implements OnInit {
   };
 
   text = '';
-  constructor( @Inject(MAT_DIALOG_DATA) public data: { answer: string; isRiht: boolean;},) { }
+  constructor( @Inject(MAT_DIALOG_DATA) public data: { answer: string; isRight: boolean;},) { }
 
   ngOnInit(): void {
-
-    if(this.data.isRiht){
+    if(this.data.isRight){
       this.text = 'Parabéns! Você acertou.';
     } else {
       this.text = 'Que pena, você errou.';

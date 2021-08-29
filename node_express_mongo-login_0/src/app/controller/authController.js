@@ -17,8 +17,16 @@ function generateToken(params =  {}) {
     });
 }
 
-router.get("/user", function(req, res) {
-    return res.send("Minha primeira rota!");
+router.get("/alunosSalas/:codSala", async (req, res) => {
+    const codSala = req.params.codSala;
+
+    try{
+        const users = await User.find({codSala});
+    
+        res.json(users);
+      } catch(err){
+        res.status(500).send({message: "nao deu certo"});
+      }
   });
 
 

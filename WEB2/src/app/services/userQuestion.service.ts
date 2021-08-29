@@ -37,4 +37,14 @@ export class UserQuestionService {
 
     return await this.http.patch(`${this.ROOT_URL}/update/${id}`, resJson)
    }
+
+   async getQuestionById(id: string){
+    return await this.http.get(`${this.ROOT_URL}/questions/${id}`);
+   }
+
+   async getAlunosByCodSala(codSala: string) {
+    return await this.http.get(`http://localhost:3000/auth/alunosSalas/${codSala}`);
+
+ }
+
 }

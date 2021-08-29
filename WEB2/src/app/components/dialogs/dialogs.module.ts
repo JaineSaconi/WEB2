@@ -10,7 +10,7 @@ import { AnswerDialogComponent } from './answer-dialog/answer-dialog.component';
 @NgModule({
   declarations: [
     SalaDialogComponent,
-    AnswerDialogComponent
+    AnswerDialogComponent,
   ],
   imports: [
     CommonModule,

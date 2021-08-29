@@ -8,6 +8,8 @@ import { AnswerDialogComponent } from '../../dialogs/answer-dialog/answer-dialog
 import { AuthenticateService } from 'src/app/services/authenticate.service';
 import { FormBuilder, FormGroup, Validators, FormsModule } from '@angular/forms';
 import { IResPut } from 'src/app/services/Interfaces/resPut.interface';
+import { MARKDOWN_CONTENT } from './markdown_content';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-content',
@@ -17,7 +19,7 @@ import { IResPut } from 'src/app/services/Interfaces/resPut.interface';
 export class ContentComponent implements OnInit {
   form: FormGroup;
 
-  showExec: boolean = true;
+  showExec: boolean = false;
   questions: IQuestion[] = {} as IQuestion[];
   auxQuestion: IQuestion = {} as IQuestion;
 
@@ -25,6 +27,7 @@ export class ContentComponent implements OnInit {
   userQuestion = [<IUserQuestion>{}];
   userQuestionAnswer: IUserQuestionAnswers = {} as IUserQuestionAnswers;
 
+  markdown = MARKDOWN_CONTENT;
   i = 0;
 
   constructor(
@@ -32,6 +35,8 @@ export class ContentComponent implements OnInit {
     public dialog: MatDialog,
     private authService: AuthenticateService,
     private fb: FormBuilder,
+    public snackBar: MatSnackBar,
+
     ) {
       this.form = this.fb.group({
         opt: [null, [Validators.required]],
@@ -54,6 +59,12 @@ export class ContentComponent implements OnInit {
   next() {
     this.i++;
     this.auxQuestion = this.questions[this.i];
+
+    if(this.i == this.questions.length){
+      this.i = 0;
+      this.showExec = false;
+      this.snackBar.open('Você respondeu todas as perguntas','', {duration: 2000});
+    }
   }
 
 
@@ -79,7 +90,6 @@ export class ContentComponent implements OnInit {
         this.userQuestion.push(await this.createUser());
       }
 
-      this.next()
 }
 
 async addQuestion(): Promise<IUserQuestionAnswers>{
@@ -92,9 +102,11 @@ async addQuestion(): Promise<IUserQuestionAnswers>{
   if(this.auxQuestion.answer === this.form.controls.opt.value){
     this.userQuestionAnswer.answers.push(true);
     this.userQuestionAnswer.selected.push(this.form.controls.opt.value);
+    await this.openDialog(this.auxQuestion.answer, true);
   } else {
     this.userQuestionAnswer.answers.push(false);
     this.userQuestionAnswer.selected.push(this.form.controls.opt.value);
+    await this.openDialog(this.auxQuestion.answer, false);
   }
 
   return this.userQuestionAnswer;
@@ -105,9 +117,11 @@ async update(question: { qid?: string; answers?: boolean[] ; selected?: string[]
   if(this.auxQuestion.answer === this.form.controls.opt.value){
     question.answers?.push(true);
     question.selected?.push(this.form.controls.opt.value);
+    await this.openDialog(this.auxQuestion.answer, true);
   } else{
     question.answers?.push(false);
     question.selected?.push(this.form.controls.opt.value);
+    await this.openDialog(this.auxQuestion.answer, false);
   }
     const que: IUserQuestionAnswers = question as IUserQuestionAnswers;
 
@@ -134,11 +148,15 @@ async createUser(): Promise<IUserQuestion>{
     return await (await this.userQuestionService.createUserQuestion(userQ)).pipe(take(1)).toPromise() as IUserQuestion;
 }
 
-  async openDialog() {
+  async openDialog(answer: string, isRight: boolean) {
+    console.log(isRight);
     const dialogRef = this.dialog.open(AnswerDialogComponent, {
-      data: {},
+      data: {isRight: isRight, answer: answer },
       ...AnswerDialogComponent.defaultConfig
     });
+    dialogRef.afterClosed().subscribe(r => {
+      this.next();
+    })
   }
 
 }

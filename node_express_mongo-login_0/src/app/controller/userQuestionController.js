@@ -20,6 +20,18 @@ router.get("/questions", async (req, res) => {
   }
 });
 
+router.get("/questions/:id", async (req, res) => {
+  const _id = req.params.id;
+
+  try{
+    const question = await Question.findById({_id});
+
+    res.json(question);
+  } catch(err){
+    res.status(500).send({message: "nao deu certo"});
+  }
+});
+
 router.post('/register', async (req, res) => {
 
   try{

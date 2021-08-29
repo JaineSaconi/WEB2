@@ -68,10 +68,11 @@ export interface IUserQuestionAnswers {
   selected: string[];
 }
 
-export interface IQuest {
-  questions?: [{
-    qid: string;
-    answers: boolean[];
-    selected: string[];
-  }];
+export interface IUserReport {
+ questionDescription: string;
+ errors: number;
+ hits: number;
+ question: IQuestion;
+ respostas: string[];
+ media: number;
 }

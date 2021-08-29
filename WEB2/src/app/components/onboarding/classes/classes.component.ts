@@ -23,6 +23,7 @@ export class ClassesComponent implements OnInit {
   async ngOnInit(): Promise<void> {
 
    this.user = this.authService.getUser();
+
    if(this.user._id){
      this.salas = await this.roomService.getSalasByProfessorId(this.user?._id).pipe(take(1)).toPromise() as ISalaRes[];
    }
