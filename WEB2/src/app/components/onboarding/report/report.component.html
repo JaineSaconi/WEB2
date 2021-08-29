@@ -1,0 +1,66 @@
+<div class="main">
+
+  <div *ngIf="user.type === 1">
+    <div *ngIf="studenReport.length==0">
+      <h3>Você não respondeu nenhuma pergunta</h3>
+    </div>
+
+    <h3> Quantidade de questoes respondidas: {{qtdQuestionsAswered}}</h3>
+
+    <div *ngIf="studenReport.length > 0">
+      <div *ngFor="let item of studenReport">
+        <div class="cont">
+          <h3>Questão: <p class="p">{{ item.questionDescription}}</p></h3>
+          <h3> Quantidade de acertos: {{item.hits}}</h3>
+          <h3> Quantidade de erros: {{item.errors}}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="user.type === 2">
+
+    <mat-form-field appearance="fill">
+      <mat-label>Turmas</mat-label>
+      <mat-select (selectionChange)="onChangeClassValue($event.value)">
+        <mat-option *ngFor="let sala of salas" [value]="sala">
+          {{sala.codigo}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div *ngIf="alunosSalas.length > 0">
+      <mat-form-field appearance="fill">
+        <mat-label>Alunos</mat-label>
+        <mat-select (selectionChange)="onChangeAlunoValue($event.value)">
+          <mat-option *ngFor="let aluno of alunosSalas" [value]="aluno">
+            {{aluno.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div *ngIf="alunosSalas.length === 0">
+      <h3> Essa turma não possui alunos cadastrados </h3>
+    </div>
+
+    <div  *ngIf="studenReport.length> 0">
+      <div *ngFor="let item of studenReport" >
+        <div class="cont">
+          <h3 class="h3"> Questão: <p class="p">{{ item.questionDescription}}</p></h3>
+
+          <h3 class="h3">Opções: <p class="p"> {{item.question.opt1}} | {{item.question.opt2}} | {{item.question.opt3}} | {{item.question.opt4}} </p></h3>
+
+          <h3 class="h3"> Resposta certa:  <p class="p"> {{item.question.answer}}</p></h3>
+          <h3 class="h3"> Respostas:  <p class="p"> | {{item.respostas}} |</p></h3>
+          <h3 class="h3"> Média de acertos:  <p class="p"> {{item.media}} </p></h3>
+
+        </div>
+      </div>
+    </div>
+
+    <div  *ngIf="studenReport.length === 0">
+      <h3> O aluno não respondeu as perguntas! </h3>
+    </div>
+  </div>
+</div>

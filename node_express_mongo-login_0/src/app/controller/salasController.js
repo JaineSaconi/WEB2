@@ -1,6 +1,4 @@
 const express = require('express');
-const authConfig = require('../../config/auth');
-const mongoose =  require('../../database');
 
 const Sala = require('../models/classes');
 

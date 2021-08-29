@@ -19,23 +19,41 @@
   </div>
 
   <div *ngIf="showExec">
-    <div *ngFor="let exerc of exercicios">
-      <div class="container">
-        <h4>{{exerc.title}}</h4>
-        <h4> {{exerc.question}}</h4>
+      <div class="container" [formGroup]="form">
+        <h4>{{auxQuestion.descriptionQuestion}}</h4>
 
-
-        <div class="form-check" *ngFor="let ans of exerc.answers">
-          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-          <label class="form-check-label" for="flexRadioDefault1">
-            <a>{{ans.text}}</a>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="opt" id="flexRadioDefault1" formControlName="opt" value="{{auxQuestion.opt1}}">
+          <label class="form-check-label" for="opt">
+            <a>{{auxQuestion.opt1}}</a>
           </label>
         </div>
-      </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="opt" id="flexRadioDefault1" formControlName="opt" value="{{auxQuestion.opt2}}">
+          <label class="form-check-label" for="opt">
+            <a>{{auxQuestion.opt2}}</a>
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="opt" id="flexRadioDefault1" formControlName="opt" value="{{auxQuestion.opt3}}">
+          <label class="form-check-label" for="opt">
+            <a>{{auxQuestion.opt3}}</a>
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="opt" id="flexRadioDefault1" formControlName="opt" value="{{auxQuestion.opt4}}">
+          <label class="form-check-label" for="opt">
+            <a>{{auxQuestion.opt4}}</a>
+          </label>
+        </div>
+
     </div>
 
     <div class="align-button">
-      <button class="button"> responder</button>
+      <button class="button" (click)="responder()"> responder</button>
     </div>
   </div>
 
