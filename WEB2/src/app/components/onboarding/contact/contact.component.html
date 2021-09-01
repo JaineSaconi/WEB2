@@ -2,29 +2,29 @@
 <div class="main-register">
 
   <div [formGroup]="form">
-  <div class="container-input">
-    <h3>Nome</h3>
-    <input class="input" formControlName="name">
-  </div>
+    <div class="container-input">
+      <h3>Nome</h3>
+      <input class="input" formControlName="nomeContact">
+    </div>
 
-  <div class="container-input">
-    <h3>Email</h3>
-    <input class="input" formControlName="email">
-  </div>
+    <div class="container-input">
+      <h3>Email</h3>
+      <input class="input" formControlName="emailContact">
+    </div>
 
-  <div class="container-input">
-    <h3>Assunto</h3>
-    <input class="input" formControlName="subject">
-  </div>
+    <div class="container-input">
+      <h3>Assunto</h3>
+      <input class="input" formControlName="subjectContact">
+    </div>
 
-  <div class="container-input">
-    <h3>Mensagem</h3>
-    <textarea class="input" formControlName="message"></textarea>
-  </div>
+    <div class="container-input">
+      <h3>Mensagem</h3>
+      <textarea class="input" formControlName="messageContact"></textarea>
+    </div>
 
-  <div class="container-button">
-    <button class="button btn" >CANCELAR</button>
-    <button class="button" (click)="register()">CADASTRAR</button>
+    <div class="container-button">
+      <button class="button btn">CANCELAR</button>
+      <button class="button" (click)="register()">CADASTRAR</button>
+    </div>
   </div>
-</div>
 </div>
