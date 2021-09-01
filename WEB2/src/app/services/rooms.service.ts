@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 
 import { Injectable } from '@angular/core';
-import { IContact, ISala } from './exercicios.interface';
+import { ISala } from './exercicios.interface';
 import { HttpRoomService } from './http-room.service';
 
 export interface IPutSala{
@@ -22,13 +22,6 @@ export class RoomsService {
     const roomJson = JSON.parse(stringify);
 
      return  this.http.post(`register`, roomJson);
-   }
-   
-   registerContact( room: IContact): Observable<Object> {
-    const stringify = JSON.stringify(room);
-    const roomJson = JSON.parse(stringify);
-
-     return  this.http.post(`contacted`, roomJson);
    }
 
    getSalasByProfessorId(id: string) {
