@@ -1,30 +1,32 @@
-<span class="legend">CONTATO</span>
+<span class="legend">Projeto</span>
+
 <div class="main-register">
 
-  <div [formGroup]="form">
-  <div class="container-input">
-    <h3>Nome</h3>
-    <input class="input" formControlName="name">
-  </div>
+    <h3>Detalhes do Projeto</h3>
 
-  <div class="container-input">
-    <h3>Email</h3>
-    <input class="input" formControlName="email">
-  </div>
 
-  <div class="container-input">
-    <h3>Assunto</h3>
-    <input class="input" formControlName="subject">
-  </div>
+    <div>
+        <h1>INTRODUÇÃO A PROBABILIDADE</h1>
+    </div>
+    <div>
+        <table class="content-button">
+            <tr>
+                <td class="texts">Nome Completo:</td>
+                <td><input class="imput-nome" type="text" name="nome" size="86"> <br /></td>
+            </tr>
+            <tr>
+                <td class="texts">Assunto:</td>
+                <td><input class="imput-assunto" type="text" name="assunto" size="86"> <br /></td>
+            </tr>
+            <tr>
+                <td><input class="imput-obs" type="text" name="obs" size="104"> <br /></td>
+            </tr>
+        </table>
+        <br />
+        <span>
+            <button class="btn" routerLink="/">Enviar</button>
 
-  <div class="container-input">
-    <h3>Mensagem</h3>
-    <textarea class="input" formControlName="message"></textarea>
-  </div>
-
-  <div class="container-button">
-    <button class="button btn" >CANCELAR</button>
-    <button class="button" (click)="register()">CADASTRAR</button>
-  </div>
-</div>
+            <button class="btn" routerLink="/">Cancelar</button>
+        </span>
+    </div>
 </div>
