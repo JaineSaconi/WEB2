@@ -1,8 +1,7 @@
-import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { take } from 'rxjs/operators';
-
+import { Router } from '@angular/router';
 import { RoomsService } from 'src/app/services/rooms.service';
 import { AuthenticateService } from 'src/app/services/authenticate.service';
 import { IContact } from './../../../services/exercicios.interface';
