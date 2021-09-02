@@ -51,7 +51,7 @@ router.post('/contacted', async (req, res) => {
   const info = await mailer.sendMail({
     to: formData.emailContact, // list of receivers
     subject: formData.subjectContact, // Subject line
-    text: formData.messageContact, // plain text body
+    html: '<div style="padding: 10px; font-size: 18px;background-color: #f27830; color: #ffffff; border-radius: 5px; margin-left: 15px; margin-right: 15px;">'+formData.messageContact +'<br><br> <div style="font-size: 13px">Caso tenha alguma dúvida, favor entrar em contato com os e-mails: <br> lucascamacho@alunos.utfpr.edu.br <br> jaine@alunos.utfpr.edu.br <br> lucasmitsudo@gmail.com </div></div>', // plain text body
   });
   console.log("Message sent: %s", info.messageId);
   res.json(info);

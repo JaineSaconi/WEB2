@@ -46,6 +46,7 @@ export class ContactComponent implements OnInit {
     if (!res) {
       this.snackBar.open('Falha no envio do contato', '', { duration: 2000 });
     } else {
+      this.form.reset();
       this.snackBar.open('Sucesso ao enviar os dados do formulário', undefined, { duration: 2000 });
     }
   }
